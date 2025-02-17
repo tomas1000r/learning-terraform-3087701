@@ -29,11 +29,6 @@ resource "aws_cognito_user_pool" "gohealth_consumers_cognito_user_pool" {
     sms_message = "Your MyGoHealth verification code is {####}"
   }
 
-  sms_configuration {
-    external_id    = "cognito-sms-role"
-    sns_caller_arn = aws_iam_role.cognito_sns_role.arn
-  }
-
   #
   # Business has requested that we allow users to reset password with a
   # verification code sent to their phone. This is a security concern, as MFA
