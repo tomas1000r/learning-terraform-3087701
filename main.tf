@@ -1,5 +1,5 @@
 resource "aws_cognito_user_pool" "pool" {
-  name = "mypool1"
+  name = "mypool2"
 }
 
 resource "aws_cognito_user_pool_client" "client" {
