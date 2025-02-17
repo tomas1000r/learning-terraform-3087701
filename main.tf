@@ -2,7 +2,7 @@ resource "aws_cognito_user_pool" "gohealth_consumers_cognito_user_pool" {
   name                = "qa-gohealth-consumers"
   deletion_protection = "INACTIVE"
 
-  alias_attributes = ["phone_number", "email", "username"]
+  alias_attributes = ["phone_number", "email", "preferred_username"]
 
   schema {
     name                = "phone_number"
