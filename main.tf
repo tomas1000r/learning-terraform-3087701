@@ -115,23 +115,3 @@ resource "aws_cognito_user_pool_client" "gohealth_consumers_cognito_app_client" 
   read_attributes  = ["phone_number"]
   write_attributes = ["phone_number"]
 }
-
-resource "aws_wafv2_web_acl" "example" {
-  name  = "web-acl-association-example"
-  scope = "REGIONAL"
-
-  default_action {
-    allow {}
-  }
-
-  visibility_config {
-    cloudwatch_metrics_enabled = false
-    metric_name                = "friendly-metric-name"
-    sampled_requests_enabled   = false
-  }
-}
-
-resource "aws_wafv2_web_acl_association" "example" {
-  resource_arn = aws_cognito_user_pool.gohealth_consumers_cognito_user_pool.arn
-  web_acl_arn  = aws_wafv2_web_acl.example.arn
-}
