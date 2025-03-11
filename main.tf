@@ -115,3 +115,7 @@ resource "aws_cognito_user_pool_client" "gohealth_consumers_cognito_app_client" 
   read_attributes  = ["phone_number"]
   write_attributes = ["phone_number"]
 }
+
+output "user_pool_arn" {
+  value = aws_cognito_user_pool.gohealth_consumers_cognito_user_pool.arn
+}
